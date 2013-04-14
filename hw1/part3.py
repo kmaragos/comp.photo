@@ -26,7 +26,14 @@ def filter_median(image, k):
   '''
   output = None
   # Insert your code here.----------------------------------------------------
- 
+  rows = len(image)
+  cols = len(image[0])
+  r = rows - 2 * k
+  c = cols - 2 * k
+  output = np.zeros((r, c), dtype=image.dtype)
+  for i in xrange(r):
+    for j in xrange(c):
+      output[i, j] = np.median(image[i:i+2*k+1, j:j+2*k+1])
   #---------------------------------------------------------------------------
   return output 
 
