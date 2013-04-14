@@ -51,7 +51,8 @@ def transform_xy_theta(dx, dy):
   theta = None
   
   # Insert your code here -------------------------------------------------------
-
+  dybyx = np.divide(dy, dx)
+  theta = np.arctan(dybyx)
   #------------------------------------------------------------------------------
   
   return theta
@@ -77,7 +78,11 @@ def transform_xy_mag(dx, dy):
   mag = None
   
   # Insert your code here -------------------------------------------------------
-
+  dx2 = np.square(dx)
+  dy2 = np.square(dy)
+  dxy = np.add(dx2, dy2)
+  from pprint import pprint
+  mag = np.sqrt(dxy)
   #------------------------------------------------------------------------------
   
   return mag
