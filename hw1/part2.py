@@ -31,7 +31,11 @@ def make_sharp(k, sd):
   '''
   kernel = None
   # Insert your code here.----------------------------------------------------
-
+  l = 2 * k + 1
+  m = math.floor(l / 2)
+  import part1
+  kernel = np.negative(part1.make_gaussian(k, sd))
+  kernel[m, m] = 2 + kernel[m, m]
   #---------------------------------------------------------------------------
   return kernel
 
