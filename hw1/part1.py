@@ -28,7 +28,16 @@ def make_gaussian(k, std):
   of all cells is equal to one.'''
   kernel = None
   # Insert your code here.----------------------------------------------------
-
+  l = 2 * k + 1
+  kernel = np.zeros(l * l)
+  kernel.shape = (l, l)
+  from scipy import signal
+  gaussian1d = signal.gaussian(l, std)
+  for i in xrange(l):
+    for j in xrange(l):
+      kernel[i, j] = gaussian1d[i] * gaussian1d[j]
+  s = np.sum(kernel)
+  kernel = np.divide(kernel, s)
   #---------------------------------------------------------------------------
   return kernel
 
