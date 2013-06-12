@@ -1,4 +1,5 @@
-classified
-==========
+Computational Photography
+=========================
 
-eyes only for now (still public, no ears or nose)
+Programming assignments for Computational Photography online course.
+
